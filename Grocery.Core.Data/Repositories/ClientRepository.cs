@@ -17,6 +17,14 @@ namespace Grocery.Core.Data.Repositories
             ];
         }
 
+        public Client Add(Client client)
+        {
+            int newId = clientList.Max(c => c.Id) + 1;
+            client.Id = newId;
+            clientList.Add(client);
+            return Get(client.Id)!;
+        }
+
         public Client? Get(string email)
         {
             Client? client = clientList.FirstOrDefault(c => c.EmailAddress.Equals(email));
