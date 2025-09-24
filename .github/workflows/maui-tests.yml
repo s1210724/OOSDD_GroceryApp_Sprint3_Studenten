@@ -25,3 +25,6 @@ jobs:
 
       - name: Build MAUI Android
         run: dotnet build Grocery.App/Grocery.App.csproj -c Release -f net8.0-android
+
+      - name: Run unit tests
+        run: dotnet test -f net8.0-android --configuration Release --no-restore --no-build --verbosity normal
