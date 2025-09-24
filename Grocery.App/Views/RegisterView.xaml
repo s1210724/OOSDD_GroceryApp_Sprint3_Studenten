@@ -12,5 +12,9 @@
         <Label Text="Password"/>
         <Entry Placeholder="Password" Text="{Binding Password}" IsPassword="True"/>
         <Button Text="Register" Command="{Binding RegisterCommand}" Margin="20"/>
+        <HorizontalStackLayout Padding="20" VerticalOptions="Center">
+            <Label Text="Don't have an account?" />
+            <Button Text="Register" Clicked="GotoLoginView" />
+        </HorizontalStackLayout>
     </VerticalStackLayout>
 </ContentPage>

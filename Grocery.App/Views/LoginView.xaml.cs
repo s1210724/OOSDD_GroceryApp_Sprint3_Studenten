@@ -16,9 +16,7 @@ public partial class LoginView : ContentPage
 
 	private void GotoRegisterView(object sender, EventArgs e)
 	{
-		//var viewModel = (LoginViewModel)BindingContext;
-		//var registerViewModel = new RegisterViewModel(_authService, _global, _clientService);
-		//Application.Current.MainPage = new RegisterView(registerViewModel);
-		((LoginViewModel)BindingContext).GotoRegisterView();
+        // call function in view model
+        ((LoginViewModel)BindingContext).GotoRegisterView();
     }
 }

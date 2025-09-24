@@ -1,6 +1,7 @@
 ﻿
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Grocery.App.Views;
 using Grocery.Core.Helpers;
 using Grocery.Core.Interfaces.Services;
 using Grocery.Core.Models;
@@ -15,10 +16,10 @@ namespace Grocery.App.ViewModels
         private readonly IClientService _clientService;
 
         [ObservableProperty]
-        private string email = "user3@mail.com";
+        private string email = "newUser@mailserver.com";
 
         [ObservableProperty]
-        private string password = "user3";
+        private string password = "verrystrongpassw123456789";
 
         [ObservableProperty]
         private string name = "J.C. Cremer";
@@ -34,7 +35,7 @@ namespace Grocery.App.ViewModels
         private void Register()
         {
             // get amount of clients
-            int Id = _authService.GetCount();
+            int Id = _clientService.GetCount();
 
             // create new client with given info and use count as id (count starts at one id's at 0 so no extra math needed
             Client newClient = new Client(
@@ -45,12 +46,18 @@ namespace Grocery.App.ViewModels
             );
 
             // add client to client repository
-            Client? addedClient = _authService.Add(newClient);
+            Client? addedClient = _clientService.Add(newClient);
 
-            // now log in to system with new account and initiate main AppShell
-            Client? authenticatedClient = _authService.Login(Email, Password);
-            _global.Client = authenticatedClient;
-            Application.Current.MainPage = new AppShell();
+            // go to login view if added successfully
+            GotoLoginView();
+
+        }
+
+        [RelayCommand]
+        public void GotoLoginView()
+        {
+            var LoginViewModel = new LoginViewModel(_authService, _global, _clientService);
+            Application.Current.MainPage = new LoginView(LoginViewModel);
         }
     }
 }

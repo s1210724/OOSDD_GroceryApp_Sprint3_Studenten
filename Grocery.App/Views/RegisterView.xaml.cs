@@ -9,4 +9,10 @@ public partial class RegisterView : ContentPage
 		InitializeComponent();
 		BindingContext = viewModel;
     }
+
+    private void GotoLoginView(object sender, EventArgs e)
+    {
+        // call function in view model
+        ((RegisterViewModel)BindingContext).GotoLoginView();
+    }
 }
