@@ -12,6 +12,7 @@ namespace Grocery.App.ViewModels
     {
         private readonly IAuthService _authService;
         private readonly GlobalViewModel _global;
+        private readonly IClientService _clientService;
 
         [ObservableProperty]
         private string email = "user3@mail.com";
@@ -42,6 +43,13 @@ namespace Grocery.App.ViewModels
             {
                 LoginMessage = "Ongeldige inloggegevens.";
             }
+        }
+
+        [RelayCommand]
+        public void GotoRegisterView()
+        {
+            var registerViewModel = new RegisterViewModel(_authService, _global, _clientService);
+            Application.Current.MainPage = new RegisterView(registerViewModel);
         }
     }
 }

@@ -37,6 +37,12 @@ namespace Grocery.Core.Data.Repositories
             return client;
         }
 
+        // get amount of clients
+        public int GetCount()
+        {
+            return clientList.Count;
+        }
+
         public List<Client> GetAll()
         {
             return clientList;
