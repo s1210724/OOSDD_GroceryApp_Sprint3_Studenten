@@ -41,4 +41,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: TestResults
-          path: '**/TestResults/*.trx'
+          path: '**/results/*.trx'
