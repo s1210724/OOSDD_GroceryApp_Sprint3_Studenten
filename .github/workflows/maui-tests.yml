@@ -2,7 +2,10 @@ name: Build MAUI Windows
 
 on:
   push:
-    branches: [ main, develop, feature/* ]
+    branches: 
+     - main
+     - dev
+     - "**"
   pull_request:
 
 jobs:
