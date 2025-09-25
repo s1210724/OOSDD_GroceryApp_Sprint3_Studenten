@@ -3,9 +3,6 @@ name: Build MAUI Windows
 on:
   push:
     branches: 
-     - main
-     - dev
-     - "**"
   pull_request:
 
 jobs:
