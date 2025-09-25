@@ -2,8 +2,13 @@ name: Build MAUI Windows
 
 on:
   push:
-    branches: 
+      branches:    
+        - '**'        # matches every branch
   pull_request:
+      branches:
+        - main
+        - release
+        - dev
 
 jobs:
   build:
