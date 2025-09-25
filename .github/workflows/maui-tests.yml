@@ -36,3 +36,8 @@ jobs:
 
       - name: Run unit tests
         run: dotnet test TestCore/TestCore.csproj -f net8.0 --configuration Release --no-restore --verbosity normal
+
+      - name: Publish Test Report
+        uses: microsoft/test-report@v1
+        with:
+          result-files: '**/TestResults/*.trx'
