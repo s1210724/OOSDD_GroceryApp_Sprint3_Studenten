@@ -40,10 +40,10 @@ namespace TestCore
         {
             if (!PasswordHelper.VerifyPassword(password, passwordHash))
             {
-                Assert.Pass("resultaten waren niet gelijk aan elkaar");
+                Assert.Pass($"'{password}' is niet gelijk aan '{passwordHash}'");
             } else
             {
-                Assert.Fail("resultaten waren gelijk aan elkaar");
+                Assert.Fail($"'{password}' is gelijk aan '{passwordHash}'");
             }
         }
     }
