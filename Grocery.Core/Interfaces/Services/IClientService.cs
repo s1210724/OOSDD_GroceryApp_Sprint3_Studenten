@@ -6,7 +6,11 @@ namespace Grocery.Core.Interfaces.Services
     {
         public Client? Get(string email);
 
-        public Client? Get(int id);
+        public Client? GetId(int id);
+
+        public int GetCount();
+
+        public Client? Add(Client client);
 
         public List<Client> GetAll();
     }
