@@ -22,15 +22,26 @@ namespace Grocery.Core.Services
             return _clientRepository.Get(email);
         }
 
-        public Client? Get(int id)
+        public Client? GetId(int id)
         {
             return _clientRepository.Get(id);
+        }
+
+        // get amount of clients
+        public int GetCount()
+        {
+            return _clientRepository.GetCount();
         }
 
         public List<Client> GetAll()
         {
             List<Client> clients = _clientRepository.GetAll();
             return clients;
+        }
+
+        public Client? Add(Client client)
+        {
+            return (_clientRepository as dynamic).Add(client);
         }
     }
 }
