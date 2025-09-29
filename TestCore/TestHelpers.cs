@@ -43,25 +43,18 @@ namespace TestCore
         [Test]
         public void TestPasswordHelperReturnsFalse()
         {
-<<<<<<< Updated upstream
-            Assert.Pass(); //Zelf uitwerken
-=======
             // Arrange
 
             // Act
 
             // Assert
             Assert.Pass("deze test is automatisch geslaagd");
->>>>>>> Stashed changes
         }
 
         [TestCase("user1", "IunRhDKa+fWo8+4/Qfj7Pg==.kDxZnUQHCZun6gLIE6d9oeULLRIuRmxmH2QKJv2IM08")]
         [TestCase("user3", "sxnIcZdYt8wC8MYWcQVQjQ==.FKd5Z/jwxPv3a63lX+uvQ0+P7EuNYZybvkmdhbnkIHA")]
         public void TestPasswordHelperReturnsFalse(string password, string passwordHash)
         {
-<<<<<<< Updated upstream
-            Assert.Fail(); //Zelf uitwerken zodat de test slaagt!
-=======
             // Arrange
             string Password = password;
             string PasswordHash = passwordHash;
@@ -78,7 +71,6 @@ namespace TestCore
             {
                 Assert.Fail($"'{Password}' is gelijk aan '{PasswordHash}'");
             }
->>>>>>> Stashed changes
         }
     }
 }
